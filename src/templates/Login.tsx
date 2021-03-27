@@ -1,25 +1,19 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {Header,Carousel} from './components'
-
 
 const useStyles = makeStyles({
-  h1: {
+  p: {
     // margin:'auto',
     // width:'50%',
     textAlign:'center',
   },
 });
 
-const App = () => {
+const Login = () => {
   const classes = useStyles();
   return (
     <div>
-      <Header/>    
-      <h1 className={classes.h1}>My Favorite Charts</h1>
-      <Carousel/>
+      <p className={classes.p}>login page</p>
     </div>
   );
 }
-
-export default App;
