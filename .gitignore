@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 /favotify
+
+# firebase config
+src/firebase/config.js

@@ -1,5 +1,6 @@
 import { createStore as reduxCreateStore,combineReducers, applyMiddleware} from 'redux';
 import {connectRouter,routerMiddleware} from 'connected-react-router';
+import thunk from 'redux-thunk';
 import { UsersReducer } from '../users/reducers';
 import { History } from 'history';
 
@@ -10,7 +11,8 @@ export default function createStore(history: History<any>){
             users:UsersReducer
         }),
         applyMiddleware(
-            routerMiddleware(history)
+            routerMiddleware(history),
+            thunk
         )
     );
 }
