@@ -1,18 +1,15 @@
-import { createStore as reduxCreateStore,combineReducers, applyMiddleware} from 'redux';
-import {connectRouter,routerMiddleware} from 'connected-react-router';
-import thunk from 'redux-thunk';
-import { UsersReducer } from '../users/reducers';
-import { History } from 'history';
+import { createStore as reduxCreateStore, combineReducers, applyMiddleware } from 'redux'
+import { connectRouter, routerMiddleware } from 'connected-react-router'
+import { createBrowserHistory } from 'history'
+import thunk from 'redux-thunk'
+import { UsersReducer } from '../users/reducers'
 
-export default function createStore(history: History<any>){
-    return reduxCreateStore(
-        combineReducers({
-            router:connectRouter(history),
-            users:UsersReducer
-        }),
-        applyMiddleware(
-            routerMiddleware(history),
-            thunk
-        )
-    );
-}
+export const history = createBrowserHistory()
+
+export const store = reduxCreateStore(
+  combineReducers({
+    router: connectRouter(history),
+    users: UsersReducer,
+  }),
+  applyMiddleware(routerMiddleware(history), thunk)
+)
