@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
-import { history, store } from './reducks/store/store'
+import { history, store } from './store'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 

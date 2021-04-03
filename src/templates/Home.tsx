@@ -1,21 +1,21 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Header, Carousel } from "../components";
-import { useSelector } from "react-redux";
-import { getUserId } from "../reducks/users/selectors";
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import { Header, Carousel } from '../components'
+import { useSelector } from 'react-redux'
+import { UserState } from '../store/users'
 
 const useStyles = makeStyles({
   h1: {
     // margin:'auto',
     // width:'50%',
-    textAlign: "center",
+    textAlign: 'center',
   },
-});
+})
 
-const Home = () => {
-  const classes = useStyles();
-  const selector = useSelector((state) => state);
-  const uid = getUserId(selector);
+const Home: React.FC = () => {
+  const classes = useStyles()
+  const userState = useSelector((state: UserState) => state)
+  const uid = userState.uid
 
   return (
     <div>
@@ -24,7 +24,7 @@ const Home = () => {
       <p>{uid}</p>
       <Carousel />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

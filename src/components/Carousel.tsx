@@ -1,9 +1,9 @@
-import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import MobileStepper from '@material-ui/core/MobileStepper';
-import Button from '@material-ui/core/Button';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import React from 'react'
+import { makeStyles, useTheme } from '@material-ui/core/styles'
+import MobileStepper from '@material-ui/core/MobileStepper'
+import Button from '@material-ui/core/Button'
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
 
 // 以下から持ってきたが、微妙
 // https://material-ui.com/components/steppers/#text-with-carousel-effect
@@ -11,21 +11,21 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 400,
     flexGrow: 1,
-    textAlign:'center',
+    textAlign: 'center',
   },
-});
-const Carousel=()=> {
-  const classes = useStyles();
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
+})
+const Carousel: React.FC = () => {
+  const classes = useStyles()
+  const theme = useTheme()
+  const [activeStep, setActiveStep] = React.useState(0)
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
+    setActiveStep((prevActiveStep) => prevActiveStep + 1)
+  }
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+    setActiveStep((prevActiveStep) => prevActiveStep - 1)
+  }
 
   return (
     <MobileStepper
@@ -47,6 +47,6 @@ const Carousel=()=> {
         </Button>
       }
     />
-  );
+  )
 }
 export default Carousel
